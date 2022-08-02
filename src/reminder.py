@@ -13,6 +13,9 @@ class PoliteReminder(PrefixedReminder):
     """This class inherits from PrefixReminder.
     It will help make our text more exciting.
     """
-    def __init__(self, text):
+    def __init__(self, text, date=None):
         super().__init__("please ")
         self.text = self.prefix + text
+    
+    def __iter__(self):
+        return iter([self.text])
